@@ -1,5 +1,7 @@
 selenium-cucumber-java
-=================
+======================
+
+Note: work in-progress. this is just a working copy
 
 Automation Testing Using selenium-cucumber with Java and Maven
 
