@@ -46,8 +46,10 @@ To generate HTML report use  `mvn test -Dcucumber.options="–plugin html:target
 To generate a JSON report Use `mvn test -Dcucumber.options="–plugin json:target/result.json"`
 
 ### Develop automation scripts using BDD approach - Cucumber-Java
-Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/reference
-A typical test will look similar to this:
+There are already many predefined StepDefinitions which is packaged under `/stepdefinitions/PredefinedStepDefinitions.java` will help you speed up your automation development that support both your favorite workaday helpers methods.
+
+Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/reference A typical test will look similar to this:
+
 ```
 Feature: Performing a Yahoo Search
 
