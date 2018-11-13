@@ -1,16 +1,19 @@
 ### selenium-cucumber-java
 
-This repository contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v 3.0.0) BDD framework with Java as programming language. It generate Allure, HTML and JSON reporters as well. It also generate `screen shots` for your test if you enable it and also generate `error shots` for your failed test cases.
+This repository contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v 3.0.0) BDD framework with Java as programming language. It generate Allure, HTML and JSON reporters as well. It also generate `screen shots` for your tests if you enable it and also generate `error shots` for your failed test cases as well.
 
 ### Installation (pre-requisites)
-1. JDK 1.8+ (make sure class path is set properly). JAVA is require to start Selenium Server plus to write your code in Java.
-2. Maven
+1. JDK 1.8+ (make sure Java class path is set)
+2. Maven (make sure .m2 class path is set)
 3. Eclipse
 4. Eclipse Plugins for
-    - Maven (makesure .m2 class path is set)
+    - Maven
     - Cucumber
+5. Browser driver (make sure you have your desired browser driver and class path is set)
+
 ### Framework set up
 Fork / Clone repository from [here]( https://github.com/amiya-pattnaik/selenium-cucumber-java) or download zip and set it up in your local workspace.
+
 ### Run Some Sample Tests
 Open terminal (MAC OSX) or command prompt / power shell (for windows OS) and navigate to the project directory
 type `mvn clean test` command to run features. With this command it will invoke the default Firefox browser and will execute the tests.
@@ -25,6 +28,7 @@ Please note that browser drivers are not included as part of this framework. The
 
 ### Reporters
 Once you ran your tests you can generate the various types of reports. This framework `selenium-cucumber-java` uses several different types of test reporters to communicate pass/failure.
+
 ##### Allure Report:
 You can generate a report using one of the following command.
 - `mvn allure:serve`
@@ -75,6 +79,7 @@ Feature: Performing a Yahoo Search
         |searchItem|
         |"Selenium Webdriver"|
 ```
+
 ### The Page Object Design Pattern
 Within your web app's UI there are areas that your tests interact with. A Page Object simply models these as objects within the test code. This reduces the amount of duplicated code and means that if the UI changes, the fix need only be applied in one place. In other wards one of the challenges of writing test automation is keeping your [selectors] (classes, id's, or xpath' etc.) up to date with the latest version of your code. The next challenge is to keep the code you write nice and `DRY (Don't Repeat Yourself)`. The page object pattern helps us accomplish this in one solution. Instead of including our selectors in our step definitions(in cucumber) we instead place them in a <pagename>.java file where we can manage all these selectors and methods together. Your test file should only call the test methods.
 
