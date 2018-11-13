@@ -33,15 +33,13 @@ Once you ran your tests you can generate the various types of reports. This fram
 You can generate a report using one of the following command.
 - `mvn allure:serve`
 
-Report will be generated into temp folder. Web server with results will start appearing in your default browser. This is very handy if you are running test in CI/CD environment and wants to access the execution report. Note: If your default browser is IE then some of the Allure repots does not appear due to the style sheet compatibility issue. To get rid of this problem you can user any other browser as a default browser or copy the Allure report url from the IE browser and use it in any other browser.
+Report will be generated into temp folder. Web server with results will start appearing in your default browser. This is very handy if you are running test in CI/CD environment and wants to access the execution report. Note: If your default browser is IE, Allure repots does not appear due to the style sheet compatibility issue. To get rid of this problem you can use any other browser as a default browser or copy the Allure report url from the IE browser and use it in any other browser. A typical Allure report will look like this
+
+![ScreenShot](https://github.com/allure-framework/allure2/blob/master/.github/readme-img.png)
 
 - `mvn allure:report`
 
 Report will be generated tо directory: `target/site/allure-maven/index.html` and you can view it locally.
-
-A typical Allure report will look like this
-
-![ScreenShot](https://github.com/allure-framework/allure2/blob/master/.github/readme-img.png)
 
 ##### HTML Report:
 To generate HTML report use  `mvn test -Dcucumber.options="–plugin html:target/result.html"`
