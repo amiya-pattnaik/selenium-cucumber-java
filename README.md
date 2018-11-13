@@ -18,14 +18,14 @@ type `mvn clean test` command to run features. With this command it will invoke 
 - To run features on specific browser use, `mvn test "-Dbrowser=browser_name"`
 browser_name can be one of following but make sure that browser’s driver file are present and specified in system variable. -- ff -- chrome -- ie -- safari etc.
 
-Please note that browser drivers are not included as part of this framework. The reason for not including browser is that selenium browser driver version are varies based on the browser version you are using and also slenium server version.
+Please note that browser drivers are not included as part of this framework. The reason for not including is that selenium browser driver version are varies based on the browser version that you are using and also selenium server version.
 
 - To run specific feature if you have multiple feature files use,
 `mvn test -Dcucumber.options="classpath:features/my_first.feature"`
 
 ### Reporters
 Once you ran your tests you can generate the various types of reports. This framework `selenium-cucumber-java` uses several different types of test reporters to communicate pass/failure.
-##### Allure Report
+##### Allure Report:
 You can generate a report using one of the following command.
 - `mvn allure:serve`
 
@@ -33,16 +33,16 @@ Report will be generated into temp folder. Web server with results will start ap
 
 - `mvn allure:report`
 
-Report will be generated tо directory: target/site/allure-maven/index.html and you can view it locally.
+Report will be generated tо directory: `target/site/allure-maven/index.html` and you can view it locally.
 
 A typical Allure report will look like this
 
 ![ScreenShot](https://github.com/allure-framework/allure2/blob/master/.github/readme-img.png)
 
-##### HTML Report
+##### HTML Report:
 To generate HTML report use  `mvn test -Dcucumber.options="–plugin html:target/result.html"`
 
-##### JSON Report
+##### JSON Report:
 To generate a JSON report Use `mvn test -Dcucumber.options="–plugin json:target/result.json"`
 
 ### Develop automation scripts using BDD approach - Cucumber-Java
