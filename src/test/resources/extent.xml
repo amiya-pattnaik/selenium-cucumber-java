@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <documentTitle>Test Framework</documentTitle>
+
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>http</protocol>
+
+        <!-- title of the document -->
+        <reportName>Test Framework</reportName>
+
+        <!-- report name - displayed at top-nav -->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+
+                });
+            ]]>
+        </scripts>
+
+        <!-- timestamp format -->
+        <styles>
+            <![CDATA[
+
+            ]]>
+        </styles>
+
+        <!-- custom javascript -->
+        <theme>dark</theme>
+
+        <!-- custom styles -->
+        <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+    </configuration>
+</extentreports>
