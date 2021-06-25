@@ -1,6 +1,5 @@
 package info.seleniumcucumber.steps;
 
-
 import info.seleniumcucumber.pages.AbstractPage;
 import info.seleniumcucumber.utils.TestCaseFailed;
 import io.cucumber.java.en.Then;
@@ -232,13 +231,13 @@ public class CommonSteps extends AbstractPage {
 
     // steps to check link presence
     @Then("^link having text \"(.*?)\" should\\s*((?:not)?)\\s+be present$")
-    public void check_element_presence(String accessName, String present) throws Exception {
+    public void check_element_presence(String accessName, String present) throws TestCaseFailed, Exception {
         assertionObj.checkElementPresence("linkText", accessName, present.isEmpty());
     }
 
     // steps to check partail link presence
     @Then("^link having partial text \"(.*?)\" should\\s*((?:not)?)\\s+be present$")
-    public void check_partial_element_presence(String accessName, String present) throws Exception {
+    public void check_partial_element_presence(String accessName, String present) throws TestCaseFailed, Exception {
         assertionObj.checkElementPresence("partialLinkText", accessName, present.isEmpty());
     }
 
@@ -323,6 +322,15 @@ public class CommonSteps extends AbstractPage {
         inputObj.deselectOptionFromDropdown(type, "selectByIndex", option, accessName);
     }
 
+    // step to select option from mutliselect dropdown list
+    /*
+     * @Then("^I select all options from multiselect dropdown having (.+) \"(.*?)\"$"
+     * ) public void select_all_option_from_multiselect_dropdown(String
+     * type,String accessName) throws Exception {
+     * miscmethod.validateLocator(type); //inputObj.
+     * //select_all_option_from_multiselect_dropdown(type, access_name) }
+     */
+
     // step to unselect option from mutliselect dropdown list
     @Then("^I deselect all options from multiselect dropdown having (.+) \"(.*?)\"$")
     public void unselect_all_option_from_multiselect_dropdown(String type, String accessName) throws Exception {
@@ -404,6 +412,12 @@ public class CommonSteps extends AbstractPage {
 
     // Progress methods
 
+    // wait for specific period of time
+    @Then("^I wait for (\\d+) sec$")
+    public void wait(String time) throws NumberFormatException, InterruptedException {
+        progressObj.wait(time);
+    }
+
     // wait for specific element to display for specific period of time
     @Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to display$")
     public void wait_for_ele_to_display(String duration, String type, String accessName) throws Exception {
@@ -446,4 +460,31 @@ public class CommonSteps extends AbstractPage {
     public void print_config() {
         configObj.printDesktopConfiguration();
     }
+
+//    @After
+//    // Take Screen shot only when a scenario is failed
+//    public final void takeScreenShot(Scenario scenario) {
+//        if (scenario.isFailed()) {
+//            TakesScreenshot ts = (TakesScreenshot) driver;
+//            File srcFile = ts.getScreenshotAs(OutputType.FILE);
+//            try {
+//                ScenarioImpl impl = (ScenarioImpl) scenario;
+//                Collection<String> tags = impl.getSourceTagNames();
+//                StringBuilder sb = new StringBuilder();
+//                //sb.append("Scenario");
+//                for (String t : tags) {
+//                    sb.append("_" + t);
+//                }
+//                //String screenshotname = "errorShots/" + impl.getId().replaceAll("\\W", "_");
+//                FileUtils.copyFile(srcFile, new File("errorShots/" + impl.getId().replaceAll("\\W", "_") + ".png"));
+//            } catch (IOException ex) {
+//                Logger.getLogger(Scenario.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//    }
+
+    // @After
+    // public final void tearDown() {
+    // DriverUtil.closeDriver();
+    // }
 }

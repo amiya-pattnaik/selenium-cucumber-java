@@ -23,4 +23,7 @@ public abstract class AbstractPage implements BaseTest {
         return driverWait;
     }
 
+    public void wait(String time) throws InterruptedException {
+        Thread.sleep(Integer.parseInt(time));
+    }
 }

@@ -18,4 +18,5 @@ import org.junit.runner.RunWith;
         },
         features = {"classpath:features/my_first.feature"}
 )
-public class RunnerTest {}
+public class RunnerTest {
+}

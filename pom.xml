@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>selenium-cucumber-java</groupId>
     <artifactId>selenium-cucumber-java</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <!-- These are the aspectj.version properties for allure -->
     <properties>
@@ -18,17 +18,11 @@
             <email>https://github.com/amiya-pattnaik</email>
             <id>apattnaik</id>
             <name>apattnaik</name>
-            <roles>
-                <role>Software Engineer</role>
-            </roles>
         </developer>
         <developer>
             <email>https://github.com/cmccarthyIrl</email>
             <id>cmccarthy</id>
             <name>cmccarthy</name>
-            <roles>
-                <role>Software Developer in Test</role>
-            </roles>
         </developer>
     </developers>
 
@@ -137,7 +131,7 @@
                     <encoding>UTF-8</encoding>
                     <source>1.8</source>
                     <target>1.8</target>
-<!--                    <compilerArgument>-Werror</compilerArgument>-->
+                    <!--                    <compilerArgument>-Werror</compilerArgument>-->
                 </configuration>
             </plugin>
 
