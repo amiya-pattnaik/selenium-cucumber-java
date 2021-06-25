@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 
 import java.io.IOException;
 
-public class CommonSteps extends AbstractPage {
+public class PredefinedStepDefinitions extends AbstractPage {
     // Navigation Steps
 
     // Step to navigate to specified URL
