@@ -1,58 +1,113 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>selenium-cucumber-java</groupId>
-  <artifactId>selenium-cucumber-java</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
-	
-	<dependencies>
-		<!-- These are the cucumber dependencies -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.5</version>
-		</dependency>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>selenium-cucumber-java</groupId>
+    <artifactId>selenium-cucumber-java</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
 
-		<!-- These are the cucumber-junit dependencies -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-		</dependency>
+    <!-- These are the aspectj.version properties for allure -->
+    <properties>
+        <aspectj.version>1.8.11</aspectj.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <browser>chrome</browser>
+        <cloud_config>cloud_config</cloud_config>
+    </properties>
 
-		<!-- These are the junit dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
+    <developers>
+        <developer>
+            <email>https://github.com/amiya-pattnaik</email>
+            <id>apattnaik</id>
+            <name>apattnaik</name>
+        </developer>
+        <developer>
+            <email>https://github.com/cmccarthyIrl</email>
+            <id>cmccarthy</id>
+            <name>cmccarthy</name>
+        </developer>
+    </developers>
 
-		<!-- These are the selenium-webdriver dependencies -->	
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.12.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>3.12.0</version>
-		</dependency>
-		
-		<!-- These are the Appium dependencies -->	
-		<dependency>
-		    <groupId>io.appium</groupId>
-		    <artifactId>java-client</artifactId>
-		    <version>5.0.4</version>
-		</dependency>
-		
-		<!-- These are the Allure Reporting dependencies -->
-		<dependency>
-            <groupId>ru.yandex.qatools.allure</groupId>
-            <artifactId>allure-cucumber-jvm-adaptor</artifactId>
-            <version>1.6.4</version>
+    <dependencies>
+        <!-- These are the Cucumber dependencies -->
+        <dependency>
+            <artifactId>cucumber-java</artifactId>
+            <groupId>io.cucumber</groupId>
+            <version>4.8.1</version>
         </dependency>
-        
+
+        <dependency>
+            <artifactId>cucumber-junit</artifactId>
+            <groupId>io.cucumber</groupId>
+            <version>4.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+
+        <!-- These are the junit dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>selenium-java</artifactId>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>ngwebdriver</artifactId>
+            <groupId>com.paulhammant</groupId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- These are the Appium dependencies -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>5.0.4</version>
+        </dependency>
+
+        <!-- These are the Allure Reporting dependencies -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber4-jvm</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+        <!-- These are the Spark Reporting dependencies -->
+        <dependency>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
+            <groupId>com.aventstack</groupId>
+            <version>1.2.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>cucumber-java</artifactId>
+                    <groupId>io.cucumber</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>cucumber-core</artifactId>
+                    <groupId>io.cucumber</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!--Logger -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -64,51 +119,27 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-	</dependencies>
-	
-	<!-- These are the aspectj.version properties for allure -->
-	<properties>
-    	<aspectj.version>1.8.11</aspectj.version>
-    	<slf4j.version>1.7.21</slf4j.version>
-	</properties>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
-					<compilerArgument>-Werror</compilerArgument>
+    </dependencies>
 
-					<systemPropertyVariables>
-						<property>
-							<name>browser</name>
-							<value>${browser}</value>
-						</property>
-						<property>
-							<name>cloud_config</name>
-							<value>${cloud_config}</value>
-						</property>
-					</systemPropertyVariables>
-				</configuration>
-			</plugin>
-			
-			<!-- These are the Allure Reporting plugins -->
-			<plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <!--                    <compilerArgument>-Werror</compilerArgument>-->
+                </configuration>
+            </plugin>
+
+            <!-- These are the Allure Reporting plugins -->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
-                <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
-                   <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-                        -Dcucumber.options="--plugin ru.yandex.qatools.allure.cucumberjvm.AllureReporter"
-                    </argLine>                   
-                </configuration>
+                <version>3.0.0-M5</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
@@ -116,16 +147,43 @@
                         <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <includes>
+                        <include>**/**/RunnerTest.java</include>
+                    </includes>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <systemPropertyVariables>
+                        <property>
+                            <name>browser</name>
+                            <value>${browser}</value>
+                        </property>
+                        <property>
+                            <name>cloud_config</name>
+                            <value>${cloud_config}</value>
+                        </property>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
             <plugin>
-    			<groupId>io.qameta.allure</groupId>
-   				 <artifactId>allure-maven</artifactId>
-    			<version>2.9</version>
-    			<configuration>
-        			<reportVersion>2.3.1</reportVersion>
-    			</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <reportVersion>2.3.5</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
 </project>
