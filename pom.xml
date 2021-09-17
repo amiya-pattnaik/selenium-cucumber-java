@@ -13,7 +13,18 @@
         <cloud_config>cloud_config</cloud_config>
     </properties>
 
-   
+    <developers>
+        <developer>
+            <email>https://github.com/amiya-pattnaik</email>
+            <id>apattnaik</id>
+            <name>apattnaik</name>
+        </developer>
+        <developer>
+            <email>https://github.com/cmccarthyIrl</email>
+            <id>cmccarthy</id>
+            <name>cmccarthy</name>
+        </developer>
+    </developers>
 
     <dependencies>
         <!-- These are the Cucumber dependencies -->

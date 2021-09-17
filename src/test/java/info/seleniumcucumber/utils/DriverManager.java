@@ -41,7 +41,7 @@ public class DriverManager {
      * @return webdriver
      */
     private static WebDriver chooseDriver() {
-        String preferredDriver = System.getProperty("browser", "chrome");
+        String preferredDriver = System.getProperty("browser", "Firefox");
         boolean headless = System.getProperty("headless", "false").equals("true");
 
         switch (preferredDriver.toLowerCase()) {
