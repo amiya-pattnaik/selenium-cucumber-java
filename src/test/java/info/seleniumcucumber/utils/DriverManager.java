@@ -39,7 +39,8 @@ public class DriverManager {
      * @return webdriver
      */
     private static WebDriver chooseDriver() {
-        String preferredDriver = System.getProperty("browser", "Firefox");
+//        String preferredDriver = System.getProperty("browser", "Firefox");
+        String preferredDriver = System.getProperty("browser", "Chrome");
         boolean headless = System.getProperty("headless", "false").equals("true");
 
         switch (preferredDriver.toLowerCase()) {
@@ -48,7 +49,8 @@ public class DriverManager {
             case "edge":
                 return new EdgeDriver();
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver_mac_2");
                 final ChromeOptions chromeOptions = new ChromeOptions();
 
                 if (headless) {
