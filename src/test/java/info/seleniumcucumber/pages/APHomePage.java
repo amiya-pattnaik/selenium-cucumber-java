@@ -1,39 +1,32 @@
 package info.seleniumcucumber.pages;
 
 import info.seleniumcucumber.utils.TestCaseFailed;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
+public class APHomePage extends AbstractPage{
 
-public class APHomePage  extends AbstractPage{
-
-//	public APHomePage(WebDriver driver)
-//	{
-//		this.driver = driver;
-//		baseClass = new BaseClass(driver);
-//	}
+	private String pageTitle = "My Store";
 	
-	public String pageTitle = "My Store";
-	
-	public String signIn = "//a[normalize-space() = 'Sign in']";
+	@FindBy(how = How.XPATH, using = "//a[normalize-space() = 'Sign in']")
+	private WebElement signIn;
 	
 	public void navigateTo_ApHomePage()
 	{
-//		driver.get(FileReaderManager.getInstance().getConfigReader().getAPApplicationUrl());
 		navigationObj.navigateTo(configFileReader.getAPApplicationUrl());
 	}
 	
 	public void verifyAPHomePageTitle() throws TestCaseFailed
 	{
 		
-//		Helper.verifyTitleContains(driver, pageTitle);
 		assertionObj.checkTitle(pageTitle,true);
 	}
 	
-	public void navigateTo_LoginPage()
+	public void navigateTo_LoginPage() throws NoSuchFieldException
 	{
 
-//		baseClass.clickElement(signIn);
-//		baseClass.clickElement("xpath",signIn,20);
-		clickObj.click("xpath",signIn);
+		clickObj.click(signIn);
 	}
 
 }

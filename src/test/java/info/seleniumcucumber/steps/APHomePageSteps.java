@@ -28,7 +28,7 @@ public class APHomePageSteps extends AbstractPage {
       }
 
       @When("^I click on sign in$")
-      public void i_click_on_sign_in()  {
+      public void i_click_on_sign_in() throws NoSuchFieldException {
 
           homePage.navigateTo_LoginPage();
 

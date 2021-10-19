@@ -62,10 +62,10 @@ public class PredefinedStepDefinitions extends AbstractPage {
     // Switch between frame
 
     // Step to switch to frame by web element
-    @Then("^I switch to frame having (.+) \"(.*?)\"$")
-    public void switch_frame_by_element(String method, String value) {
-        navigationObj.switchFrame(method, value);
-    }
+//    @Then("^I switch to frame having (.+) \"(.*?)\"$")
+//    public void switch_frame_by_element(String method, String value) {
+//        navigationObj.switchFrame(method, value);
+//    }
 
     // step to switch to main content
     @Then("^I switch to main content$")
@@ -104,11 +104,11 @@ public class PredefinedStepDefinitions extends AbstractPage {
     // zoom out webpage till necessary element displays
 
     // steps to zoom out till element displays
-    @Then("^I zoom out page till I see element having (.+) \"(.*?)\"$")
-    public void zoom_till_element_display(String type, String accessName) throws Exception {
-        miscmethodObj.validateLocator(type);
-        navigationObj.zoomInOutTillElementDisplay(type, "substract", accessName);
-    }
+//    @Then("^I zoom out page till I see element having (.+) \"(.*?)\"$")
+//    public void zoom_till_element_display(String type, String accessName) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        navigationObj.zoomInOutTillElementDisplay(type, "substract", accessName);
+//    }
 
     // reset webpage view use
 
@@ -126,20 +126,20 @@ public class PredefinedStepDefinitions extends AbstractPage {
 
     // scroll webpage to specific element
 
-    @Then("^I scroll to element having (.+) \"(.*?)\"$")
-    public void scroll_to_element(String type, String accessName) throws Exception {
-        miscmethodObj.validateLocator(type);
-        navigationObj.scrollToElement(type, accessName);
-    }
+//    @Then("^I scroll to element having (.+) \"(.*?)\"$")
+//    public void scroll_to_element(String type, String accessName) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        navigationObj.scrollToElement(type, accessName);
+//    }
 
     // hover over element
 
     // Note: Doesn't work on Windows firefox
-    @Then("^I hover over element having (.+) \"(.*?)\"$")
-    public void hover_over_element(String type, String accessName) throws Exception {
-        miscmethodObj.validateLocator(type);
-        navigationObj.hoverOverElement(type, accessName);
-    }
+//    @Then("^I hover over element having (.+) \"(.*?)\"$")
+//    public void hover_over_element(String type, String accessName) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        navigationObj.hoverOverElement(type, accessName);
+//    }
 
     // Assertion steps
 
@@ -378,37 +378,37 @@ public class PredefinedStepDefinitions extends AbstractPage {
     // Click element Steps
 
     // click on web element
-    @Then("^I click on element having (.+) \"(.*?)\"$")
-    public void click(String type, String accessName) throws Exception {
-        miscmethodObj.validateLocator(type);
-        clickObj.click(type, accessName);
-    }
-
-    // Forcefully click on element
-    @Then("^I forcefully click on element having (.+) \"(.*?)\"$")
-    public void click_forcefully(String type, String accessName) throws Exception {
-        miscmethodObj.validateLocator(type);
-        clickObj.clickForcefully(type, accessName);
-    }
-
-    // double click on web element
-    @Then("^I double click on element having (.+) \"(.*?)\"$")
-    public void double_click(String type, String accessValue) throws Exception {
-        miscmethodObj.validateLocator(type);
-        clickObj.doubleClick(type, accessValue);
-    }
-
-    // steps to click on link
-    @Then("^I click on link having text \"(.*?)\"$")
-    public void click_link(String accessName) {
-        clickObj.click("linkText", accessName);
-    }
-
-    // Step to click on partial link
-    @Then("^I click on link having partial text \"(.*?)\"$")
-    public void click_partial_link(String accessName) {
-        clickObj.click("partialLinkText", accessName);
-    }
+//    @Then("^I click on element having (.+) \"(.*?)\"$")
+//    public void click(String type, String accessName) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        clickObj.click(type, accessName);
+//    }
+//
+//    // Forcefully click on element
+//    @Then("^I forcefully click on element having (.+) \"(.*?)\"$")
+//    public void click_forcefully(String type, String accessName) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        clickObj.clickForcefully(type, accessName);
+//    }
+//
+//    // double click on web element
+//    @Then("^I double click on element having (.+) \"(.*?)\"$")
+//    public void double_click(String type, String accessValue) throws Exception {
+//        miscmethodObj.validateLocator(type);
+//        clickObj.doubleClick(type, accessValue);
+//    }
+//
+//    // steps to click on link
+//    @Then("^I click on link having text \"(.*?)\"$")
+//    public void click_link(String accessName) {
+//        clickObj.click("linkText", accessName);
+//    }
+//
+//    // Step to click on partial link
+//    @Then("^I click on link having partial text \"(.*?)\"$")
+//    public void click_partial_link(String accessName) {
+//        clickObj.click("partialLinkText", accessName);
+//    }
 
     // Progress methods
 

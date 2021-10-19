@@ -6,9 +6,9 @@ import info.seleniumcucumber.utils.dataproviders.JsonDataReader;
 
 public interface BaseTest {
     MiscMethods miscmethodObj = new MiscMethods();
-    NavigateMethods navigationObj = new NavigateMethods();
+    NavigateMethodsByElement navigationObj = new NavigateMethodsByElement();
     AssertionMethods assertionObj = new AssertionMethods();
-    ClickElementsMethods clickObj = new ClickElementsMethods();
+    ClickElementsMethodsByElement clickObj = new ClickElementsMethodsByElement();
     ConfigurationMethods configObj = new ConfigurationMethods();
     InputMethods inputObj = new InputMethods();
     ProgressMethods progressObj = new ProgressMethods();
