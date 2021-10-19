@@ -4,7 +4,6 @@ import info.seleniumcucumber.pages.AbstractPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ClickElementsMethodsByElement extends AbstractPage implements BaseTest {
 
