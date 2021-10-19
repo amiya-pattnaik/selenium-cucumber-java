@@ -10,7 +10,7 @@ public interface BaseTest {
     AssertionMethodsByElement assertionObj = new AssertionMethodsByElement();
     ClickElementsMethodsByElement clickObj = new ClickElementsMethodsByElement();
     ConfigurationMethods configObj = new ConfigurationMethods();
-    InputMethods inputObj = new InputMethods();
+    InputMethodsByElement inputObj = new InputMethodsByElement();
     ProgressMethods progressObj = new ProgressMethods();
     JavascriptHandlingMethods javascriptObj = new JavascriptHandlingMethods();
     ScreenShotMethods screenshotObj = new ScreenShotMethods();
