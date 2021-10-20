@@ -9,7 +9,6 @@ public class APHomePageSteps extends AbstractPage {
 
   APHomePage homePage;
 
-//  public APHomePageSteps(TestContext context) {
   public APHomePageSteps() {
 
     homePage = getAPHomePage();

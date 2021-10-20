@@ -12,7 +12,7 @@ public class ClickElementsMethodsByElement extends AbstractPage implements BaseT
      *
      * @param element : WebElement : WebElement type
      */
-    public void click(WebElement element)  throws NoSuchFieldException{
+    public void click(WebElement element) throws NoSuchFieldException {
         getDriverWait().waitForElementToLoad(element);
         element.click();
     }

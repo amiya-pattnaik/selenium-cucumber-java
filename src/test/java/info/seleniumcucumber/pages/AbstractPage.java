@@ -5,7 +5,6 @@ import info.seleniumcucumber.utils.DriverManager;
 import info.seleniumcucumber.utils.DriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import info.seleniumcucumber.pages.APHomePage;
 
 public abstract class AbstractPage implements BaseTest {
 
@@ -14,6 +13,9 @@ public abstract class AbstractPage implements BaseTest {
     private APHomePage homePage;
     private APMyAccountPage myAccountPage;
     private APSignInPage signInPage;
+    private APOrderConfirmationPage orderConfirmationPage;
+    private APOrderPage orderPage;
+    private APTshirtsSectionPage tShirtsSectionPage;
 
     protected AbstractPage() {
         PageFactory.initElements(driverManager.getDriver(), this);
@@ -38,8 +40,21 @@ public abstract class AbstractPage implements BaseTest {
     public APMyAccountPage getAPMyAccountPage(){
         return (myAccountPage == null) ? myAccountPage = new APMyAccountPage() : myAccountPage;
     }
+
     public APSignInPage getAPSignInPage(){
         return (signInPage == null) ? signInPage = new APSignInPage() : signInPage;
     }
+
+    public APTshirtsSectionPage getAPTshirtsSectionPage(){
+        return (tShirtsSectionPage == null) ? tShirtsSectionPage = new APTshirtsSectionPage() : tShirtsSectionPage;
+    }
+    public APOrderConfirmationPage getAPOrderConfirmationPage(){
+        return (orderConfirmationPage == null) ? orderConfirmationPage = new APOrderConfirmationPage() : orderConfirmationPage;
+    }
+
+    public APOrderPage getAPOrderPage(){
+        return (orderPage == null) ? orderPage = new APOrderPage() : orderPage;
+    }
+
 
 }

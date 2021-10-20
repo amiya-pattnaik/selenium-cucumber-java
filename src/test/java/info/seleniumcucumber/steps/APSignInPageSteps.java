@@ -22,7 +22,6 @@ public class APSignInPageSteps extends AbstractPage {
 	
 	@When("^I enter \"([^\"]*)\" login credentials$")
 	public void i_enter_login_credentials(String customerName) throws NoSuchFieldException {
-//		Customer customer = FileReaderManager.getInstance().getJsonReader().getCustomerByName(customerName);
 		Customer customer = jsonDataReader.getCustomerByName(customerName);
 		signInPage.signInOperation(customer);
 	}
