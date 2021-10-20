@@ -16,6 +16,7 @@ public abstract class AbstractPage implements BaseTest {
     private APOrderConfirmationPage orderConfirmationPage;
     private APOrderPage orderPage;
     private APTshirtsSectionPage tShirtsSectionPage;
+    private Saucedemo_SignInPage saucedemo_SignInPage;
 
     protected AbstractPage() {
         PageFactory.initElements(driverManager.getDriver(), this);
@@ -54,6 +55,10 @@ public abstract class AbstractPage implements BaseTest {
 
     public APOrderPage getAPOrderPage(){
         return (orderPage == null) ? orderPage = new APOrderPage() : orderPage;
+    }
+
+    public Saucedemo_SignInPage getSaucedemo_SignInPage(){
+        return (saucedemo_SignInPage == null) ? saucedemo_SignInPage = new Saucedemo_SignInPage() : saucedemo_SignInPage;
     }
 
 
