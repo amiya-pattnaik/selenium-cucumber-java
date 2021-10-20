@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class InputMethodsByElement extends AbstractPage implements BaseTest {
-    private final SelectElementByType selectElementByType = new SelectElementByType();
     private WebElement dropdown = null;
     private Select selectList = null;
 

@@ -11,7 +11,6 @@ public interface BaseTest {
     ClickElementsMethodsByElement clickObj = new ClickElementsMethodsByElement();
     ConfigurationMethods configObj = new ConfigurationMethods();
     InputMethodsByElement inputObj = new InputMethodsByElement();
-    ProgressMethods progressObj = new ProgressMethods();
     JavascriptHandlingMethods javascriptObj = new JavascriptHandlingMethods();
     ScreenShotMethods screenshotObj = new ScreenShotMethods();
     ConfigFileReader configFileReader = new ConfigFileReader();

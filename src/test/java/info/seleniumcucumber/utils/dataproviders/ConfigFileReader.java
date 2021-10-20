@@ -59,6 +59,12 @@ public class ConfigFileReader {
 		if(url != null) return url;
 		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
 	}
+
+	public String getBaseUrl() {
+		String url = properties.getProperty("baseURL");
+		if(url != null) return url;
+		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+	}
 	
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");

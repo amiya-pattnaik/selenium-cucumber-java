@@ -1,12 +1,10 @@
 package info.seleniumcucumber.utils;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
+import info.seleniumcucumber.constants.Constants;
 import info.seleniumcucumber.utils.expectedConditions.ClickabilityOfElement;
-import info.seleniumcucumber.utils.expectedConditions.ClickabilityOfElementByLocator;
 import info.seleniumcucumber.utils.expectedConditions.InvisibilityOfElement;
-import info.seleniumcucumber.utils.expectedConditions.InvisibilityOfElementByLocator;
 import info.seleniumcucumber.utils.expectedConditions.VisibilityOfElement;
-import info.seleniumcucumber.utils.expectedConditions.VisibilityOfElementByLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.ScriptTimeoutException;
@@ -42,12 +40,6 @@ public class DriverWait {
         waitForElementClickable(element);
     }
 
-    public void waitForElementToLoad(By locator) throws NoSuchFieldException {
-        waitForAngular();
-        waitForElementVisible(locator);
-        waitForElementClickable(locator);
-    }
-
     /**
      * Wait for Angular loads using Ng Driver
      */
@@ -72,26 +64,6 @@ public class DriverWait {
     }
 
     /**
-     * wait for element visible by locator
-     */
-    private void waitForElementVisible(By locator) {
-        try {
-            waitLong().until(new VisibilityOfElementByLocator(locator));
-        } catch (Exception ignored) {
-        }
-    }
-
-    /**
-     * wait for element Invisible by locator
-     */
-    private void waitForElementInVisible(By locator) {
-        try {
-            new InvisibilityOfElementByLocator(locator);
-        } catch (Exception ignored) {
-        }
-    }
-
-    /**
      * wait for element Invisible by locator
      */
     private void waitForElementInVisible(WebElement element) {
@@ -109,17 +81,6 @@ public class DriverWait {
             new ClickabilityOfElement(element);
         } catch (Exception t) {
             throw new NoSuchFieldException("could not interact with the element " + element);
-        }
-    }
-
-    /**
-     * wait for element clickable by locator
-     */
-    private void waitForElementClickable(By locator) throws NoSuchFieldException {
-        try {
-            new ClickabilityOfElementByLocator(locator);
-        } catch (Exception t) {
-            throw new NoSuchFieldException("could not interact with the element by locator " + locator);
         }
     }
 

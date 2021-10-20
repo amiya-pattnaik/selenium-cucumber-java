@@ -1,4 +1,4 @@
-package info.seleniumcucumber.utils;
+package info.seleniumcucumber.constants;
 
 public class Constants {
 

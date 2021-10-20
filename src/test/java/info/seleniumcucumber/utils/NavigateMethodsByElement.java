@@ -1,14 +1,10 @@
 package info.seleniumcucumber.utils;
 
 import info.seleniumcucumber.pages.AbstractPage;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 public class NavigateMethodsByElement extends AbstractPage implements BaseTest {
-    private final SelectElementByType selectElementByType = new SelectElementByType();
     private String old_win = null;
     private String lastWinHandle;
 
@@ -56,7 +52,7 @@ public class NavigateMethodsByElement extends AbstractPage implements BaseTest {
      * @param inOut : String : Zoom in or out
      */
     public void zoomInOut(String inOut) {
-        WebElement Sel = getDriver().findElement(selectElementByType.getelementbytype("tagName", "html"));
+        WebElement Sel = getDriver().findElement(By.tagName("html"));
         switch (inOut) {
             case "ADD":
                 Sel.sendKeys(Keys.chord(getKey(), Keys.ADD));

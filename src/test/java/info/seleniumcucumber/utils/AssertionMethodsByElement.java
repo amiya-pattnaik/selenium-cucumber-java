@@ -8,11 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class AssertionMethodsByElement extends AbstractPage implements BaseTest {
-    // This file contains assertion methods which are called from
-    // predefinedStepDefinitions
 
-    private final SelectElementByType selectElementByType = new SelectElementByType();
-    // SelectElementByType eleType= new SelectElementByType();
     private WebElement element = null;
 
     /**

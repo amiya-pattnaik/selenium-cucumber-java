@@ -1,6 +1,6 @@
 package info.seleniumcucumber.utils.expectedConditions;
 
-import info.seleniumcucumber.utils.Constants;
+import info.seleniumcucumber.constants.Constants;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
