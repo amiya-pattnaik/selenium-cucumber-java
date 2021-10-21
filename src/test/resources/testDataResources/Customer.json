@@ -1,4 +1,4 @@
-[	
+[
 	{
 		"username": "praveen1423",
 		"password": "wordpress",
@@ -20,13 +20,22 @@
 		}
 	},
 	{
-		"name": "problem",
-		"username": "problem_user",
-		"password": "secret_sauce"
-	},
-	{
-		"name": "performance",
-		"username": "performance_glitch_user",
-		"password": "secret_sauce"
+		"username": "daoduyminh@gmail.com",
+		"password": "111111",
+		"firstName": "Minh",
+		"lastName": "Dao",
+		"age": 35,
+		"emailAddress": "daoduyminh@gmail.com",
+		"address": {
+			"streetAddress": "Palam Vihar",
+			"city": "Gurgaon",
+			"postCode": "122345",
+			"state": "Haryana",
+			"country": "India",
+			"county": "Delhi"
+		},
+		"phoneNumber": {
+			"mob": "0772064555"
+		}
 	}
 ]

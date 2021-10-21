@@ -197,6 +197,13 @@ public class NavigateMethodsByElement extends AbstractPage implements BaseTest {
     /**
      * method to switch to default content
      */
+    public void switchParentFrame() {
+        getDriver().switchTo().parentFrame();
+    }
+
+    /**
+     * method to switch to default content
+     */
     public void switchToDefaultContent() {
         getDriver().switchTo().defaultContent();
     }

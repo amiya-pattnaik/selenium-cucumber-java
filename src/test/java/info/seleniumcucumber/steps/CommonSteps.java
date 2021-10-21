@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 
 import java.io.IOException;
 
-public class PredefinedStepDefinitions extends AbstractPage {
+public class CommonSteps extends AbstractPage {
     // Navigation Steps
 
     // Step to navigate to specified URL
@@ -155,14 +155,6 @@ public class PredefinedStepDefinitions extends AbstractPage {
     @Then("^I take screenshot$")
     public void take_screenshot() throws IOException {
         screenshotObj.takeScreenShot();
-    }
-
-    // Configuration steps
-
-    // step to print configuration
-    @Then("^I print configuration$")
-    public void print_config() {
-        configObj.printDesktopConfiguration();
     }
 
 }
