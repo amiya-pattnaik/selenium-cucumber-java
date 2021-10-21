@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -33,7 +34,13 @@ public class DriverManager {
 
         switch (configFileReader.getBrowser()) {
             case EDGE:
-                return new EdgeDriver();
+                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver");
+                final EdgeOptions edgeOptions = new EdgeOptions();
+                if (headless) {
+                    edgeOptions.setCapability("UseChromium", true);
+                    edgeOptions.setCapability("addArguments","headless");
+                }
+                return new EdgeDriver(edgeOptions);
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver_mac_2");
                 final ChromeOptions chromeOptions = new ChromeOptions();
@@ -60,6 +67,7 @@ public class DriverManager {
                     ffOptions.setHeadless(true);
                 }
                 return new FirefoxDriver(ffOptions);
+//                return new FirefoxDriver();
         }
     }
 

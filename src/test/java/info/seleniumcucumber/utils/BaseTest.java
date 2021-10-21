@@ -1,8 +1,6 @@
 package info.seleniumcucumber.utils;
 
-import info.seleniumcucumber.utils.dataproviders.ConfigFileReader;
-import info.seleniumcucumber.utils.dataproviders.ExcelDataReader;
-import info.seleniumcucumber.utils.dataproviders.JsonDataReader;
+import info.seleniumcucumber.utils.dataproviders.*;
 
 public interface BaseTest {
     NavigateMethodsByElement navigationObj = new NavigateMethodsByElement();
