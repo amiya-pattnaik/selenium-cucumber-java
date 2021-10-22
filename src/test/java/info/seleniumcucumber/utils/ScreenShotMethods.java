@@ -1,6 +1,6 @@
 package info.seleniumcucumber.utils;
 
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

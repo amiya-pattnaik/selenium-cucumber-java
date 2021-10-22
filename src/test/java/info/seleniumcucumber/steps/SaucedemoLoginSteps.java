@@ -1,7 +1,7 @@
 package info.seleniumcucumber.steps;
 
-import info.seleniumcucumber.pages.AbstractPage;
-import info.seleniumcucumber.pages.Saucedemo_SignInPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.Saucedemo_SignInPage;
 import info.seleniumcucumber.testDataTypes.UserLogin;
 import io.cucumber.java.en.*;
 

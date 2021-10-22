@@ -1,8 +1,8 @@
 package info.seleniumcucumber.steps;
 
 import io.cucumber.java.en.*;
-import info.seleniumcucumber.pages.APMyAccountPage;
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.APMyAccountPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import info.seleniumcucumber.utils.TestCaseFailed;
 
 public class APMyAccountPageSteps extends AbstractPage {

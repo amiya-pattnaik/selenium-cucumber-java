@@ -1,10 +1,7 @@
 package info.seleniumcucumber.steps;
 
-import info.seleniumcucumber.pages.APHomePage;
-import info.seleniumcucumber.pages.AbstractPage;
-import info.seleniumcucumber.utils.TestCaseFailed;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 
 public class NavigationSteps extends AbstractPage {
 

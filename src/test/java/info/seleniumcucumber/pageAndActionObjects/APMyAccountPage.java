@@ -1,4 +1,4 @@
-package info.seleniumcucumber.pages;
+package info.seleniumcucumber.pageAndActionObjects;
 
 import info.seleniumcucumber.utils.TestCaseFailed;
 

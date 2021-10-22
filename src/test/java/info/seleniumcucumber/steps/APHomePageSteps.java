@@ -2,8 +2,8 @@ package info.seleniumcucumber.steps;
 
 import info.seleniumcucumber.utils.TestCaseFailed;
 import io.cucumber.java.en.*;
-import info.seleniumcucumber.pages.AbstractPage;
-import info.seleniumcucumber.pages.APHomePage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.APHomePage;
 
 public class APHomePageSteps extends AbstractPage {
 

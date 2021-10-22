@@ -2,8 +2,8 @@ package info.seleniumcucumber.steps;
 
 import info.seleniumcucumber.utils.TestCaseFailed;
 import io.cucumber.java.en.*;
-import info.seleniumcucumber.pages.AbstractPage;
-import info.seleniumcucumber.pages.APTshirtsSectionPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.APTshirtsSectionPage;
 
 public class APTshirtsSectionPageSteps extends AbstractPage {
 	APTshirtsSectionPage tshirtsSectionPage;

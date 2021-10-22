@@ -1,6 +1,6 @@
 package info.seleniumcucumber.steps;
 
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import info.seleniumcucumber.utils.TestCaseFailed;
 import io.cucumber.java.en.Then;
 

@@ -1,8 +1,7 @@
 package info.seleniumcucumber.utils;
 
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;

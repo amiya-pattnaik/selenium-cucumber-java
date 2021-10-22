@@ -1,9 +1,9 @@
 package info.seleniumcucumber.steps;
 
 import io.cucumber.java.en.*;
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import info.seleniumcucumber.utils.TestCaseFailed;
-import info.seleniumcucumber.pages.APSignInPage;
+import info.seleniumcucumber.pageAndActionObjects.APSignInPage;
 import info.seleniumcucumber.testDataTypes.Customer;
 
 public class APSignInPageSteps extends AbstractPage {

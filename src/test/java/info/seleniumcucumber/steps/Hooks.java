@@ -1,14 +1,12 @@
 package info.seleniumcucumber.steps;
 
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class Hooks extends AbstractPage {
     private final Logger log = LoggerFactory.getLogger(Hooks.class);

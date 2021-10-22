@@ -1,5 +1,6 @@
-package info.seleniumcucumber.pages;
+package info.seleniumcucumber.pageAndActionObjects;
 
+import info.seleniumcucumber.pageAndActionObjects.APIs.RegisterUserActions;
 import info.seleniumcucumber.utils.BaseTest;
 import info.seleniumcucumber.utils.DriverManager;
 import info.seleniumcucumber.utils.DriverWait;
@@ -17,6 +18,7 @@ public abstract class AbstractPage implements BaseTest {
     private APOrderPage orderPage;
     private APTshirtsSectionPage tShirtsSectionPage;
     private Saucedemo_SignInPage saucedemo_SignInPage;
+    private RegisterUserActions registerUserActions;
 
     protected AbstractPage() {
         PageFactory.initElements(driverManager.getDriver(), this);
@@ -59,6 +61,10 @@ public abstract class AbstractPage implements BaseTest {
 
     public Saucedemo_SignInPage getSaucedemo_SignInPage(){
         return (saucedemo_SignInPage == null) ? saucedemo_SignInPage = new Saucedemo_SignInPage() : saucedemo_SignInPage;
+    }
+
+    public RegisterUserActions getRegisterUserActions(){
+        return (registerUserActions == null) ? registerUserActions = new RegisterUserActions() : registerUserActions;
     }
 
 

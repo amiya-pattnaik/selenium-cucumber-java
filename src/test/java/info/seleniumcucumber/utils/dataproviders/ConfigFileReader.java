@@ -47,6 +47,12 @@ public class ConfigFileReader {
 		}
 		return 30;		
 	}
+
+	public String getHost() {
+		String host = properties.getProperty("Host");
+		if(host != null) return host;
+		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+	}
 	
 	public String getWordPressApplicationUrl() {
 		String url = properties.getProperty("wordpressurl");

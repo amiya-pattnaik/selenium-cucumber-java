@@ -1,4 +1,4 @@
-package info.seleniumcucumber.pages;
+package info.seleniumcucumber.pageAndActionObjects;
 
 import info.seleniumcucumber.testDataTypes.UserLogin;
 import org.openqa.selenium.WebElement;

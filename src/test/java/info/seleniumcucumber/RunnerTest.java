@@ -18,6 +18,8 @@ import org.junit.runner.RunWith;
         },
 //        features = {"classpath:features/my_first.feature"}
         features = {"src/test/resources/features/Purchase.feature"}
+//        features = {"src/test/resources/features/api/registeruser.feature"}
+//        features = {"src/test/resources/features/api/login.feature"}
 //        features = {"src/test/resources/features/saucedemo-login.feature"}
 )
 public class RunnerTest {

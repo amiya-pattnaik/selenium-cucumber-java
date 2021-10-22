@@ -1,6 +1,6 @@
 package info.seleniumcucumber.utils;
 
-import info.seleniumcucumber.pages.AbstractPage;
+import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
