@@ -51,13 +51,37 @@ public class ConfigFileReader {
 	public String getHost() {
 		String host = properties.getProperty("Host");
 		if(host != null) return host;
-		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+		else throw new RuntimeException("Host not specified in the Configuration.properties file for the Key:url");
+	}
+
+	public String getDBUrl() {
+		String dbUrl = properties.getProperty("DBUrl");
+		if(dbUrl != null) return dbUrl;
+		else throw new RuntimeException("DBUrl not specified in the Configuration.properties file for the Key:url");
+	}
+
+	public String getDBName() {
+		String dbName = properties.getProperty("DBName");
+		if(dbName != null) return dbName;
+		else throw new RuntimeException("DBName not specified in the Configuration.properties file for the Key:url");
+	}
+
+	public String getDBUserName() {
+		String dbUserName = properties.getProperty("DBUserName");
+		if(dbUserName != null) return dbUserName;
+		else throw new RuntimeException("DBName not specified in the Configuration.properties file for the Key:url");
+	}
+
+	public String getDBPassWord() {
+		String dbPassWord = properties.getProperty("DBPassWord");
+		if(dbPassWord != null) return dbPassWord;
+		else throw new RuntimeException("DBName not specified in the Configuration.properties file for the Key:url");
 	}
 	
 	public String getWordPressApplicationUrl() {
 		String url = properties.getProperty("wordpressurl");
 		if(url != null) return url;
-		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+		else throw new RuntimeException("WordPress Url not specified in the Configuration.properties file for the Key:url");
 	}
 	
 	public String getAPApplicationUrl() {
