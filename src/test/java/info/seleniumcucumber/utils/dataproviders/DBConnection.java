@@ -13,7 +13,7 @@ public final class DBConnection {
     
 
 
-    private DBConnection() {
+    public DBConnection() {
         String url = configFileReader.getDBUrl();
         String dbName = configFileReader.getDBName();
         String driver = "com.mysql.jdbc.Driver";
