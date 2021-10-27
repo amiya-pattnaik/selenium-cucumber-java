@@ -3,6 +3,7 @@ package info.seleniumcucumber.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +15,7 @@ public class DriverManager {
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     private static WebDriver driver;
     private ConfigFileReader configFileReader = new ConfigFileReader();
+    private DevTools devTools;
 
     private static final Thread CLOSE_THREAD = new Thread() {
         @Override
@@ -58,7 +60,9 @@ public class DriverManager {
                 chromeOptions.addArguments("--disable-dev-shm-usage");
                 chromeOptions.addArguments("--no-sandbox");
 
-                return new ChromeDriver(chromeOptions);
+                ChromeDriver driver = new ChromeDriver(chromeOptions);
+                devTools = driver.getDevTools();
+                return driver;
             default:
                 System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
@@ -83,6 +87,10 @@ public class DriverManager {
             Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
             return getDriver();
         }
+    }
+
+    public DevTools getDevTools() {
+        return devTools;
     }
 
 }

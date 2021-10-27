@@ -4,7 +4,7 @@ Feature: Login saucedemo website
   So that
 
   Scenario Outline: Login successfully scenario
-    Given I want to go to saucedemo website
+    And I want to go to saucedemo website
     When I login saucedemo with "<user>"
 
 

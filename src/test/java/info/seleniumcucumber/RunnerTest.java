@@ -20,8 +20,10 @@ import org.junit.runner.RunWith;
 //        features = {"src/test/resources/features/Purchase.feature"}
 //        features = {"src/test/resources/features/api/registeruser.feature"}
 //        features = {"src/test/resources/features/api/login.feature"}
-        features = {"src/test/resources/features/api/testDB.feature"}
+//        features = {"src/test/resources/features/api/testDB.feature"}
 //        features = {"src/test/resources/features/saucedemo-login.feature"}
+        features = {"src/test/resources/features/weather-intercept.feature"}
+//        features = {"src/test/resources/features/ExecuteAutomationDevTools.feature"}
 )
 public class RunnerTest {
 }

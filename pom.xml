@@ -43,7 +43,11 @@
             <groupId>io.cucumber</groupId>
             <version>4.8.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -57,16 +61,28 @@
             <version>4.13.1</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <version>3.141.59</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
-            <artifactId>selenium-java</artifactId>
             <groupId>org.seleniumhq.selenium</groupId>
-            <version>3.141.59</version>
+            <artifactId>selenium-java</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-server</artifactId>-->
+<!--            <version>3.12.0</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>3.12.0</version>
+            <version>4.0.0-alpha-2</version>
         </dependency>
 
         <dependency>

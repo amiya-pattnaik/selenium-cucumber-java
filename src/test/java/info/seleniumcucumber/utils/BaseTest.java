@@ -12,4 +12,5 @@ public interface BaseTest {
     ConfigFileReader configFileReader = new ConfigFileReader();
     ExcelDataReader excelDataReader = new ExcelDataReader();
     JsonDataReader jsonDataReader = new JsonDataReader();
+    ValidateEmail validateEmail = new ValidateEmail();
 }

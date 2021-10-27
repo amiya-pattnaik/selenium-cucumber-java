@@ -5,6 +5,7 @@ import info.seleniumcucumber.utils.BaseTest;
 import info.seleniumcucumber.utils.DriverManager;
 import info.seleniumcucumber.utils.DriverWait;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractPage implements BaseTest {
@@ -19,6 +20,7 @@ public abstract class AbstractPage implements BaseTest {
     private APTshirtsSectionPage tShirtsSectionPage;
     private Saucedemo_SignInPage saucedemo_SignInPage;
     private RegisterUserActions registerUserActions;
+    private Weather weather;
 
     protected AbstractPage() {
         PageFactory.initElements(driverManager.getDriver(), this);
@@ -26,6 +28,10 @@ public abstract class AbstractPage implements BaseTest {
 
     public WebDriver getDriver() {
         return driverManager.getDriver();
+    }
+
+    public DevTools getDevTools() {
+        return driverManager.getDevTools();
     }
 
     public DriverWait getDriverWait() {
@@ -65,6 +71,10 @@ public abstract class AbstractPage implements BaseTest {
 
     public RegisterUserActions getRegisterUserActions(){
         return (registerUserActions == null) ? registerUserActions = new RegisterUserActions() : registerUserActions;
+    }
+
+    public Weather getWeather(){
+        return (weather == null) ? weather = new Weather() : weather;
     }
 
 

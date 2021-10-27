@@ -78,7 +78,7 @@ public class DriverWait {
      */
     private void waitForElementClickable(WebElement element) throws NoSuchFieldException {
         try {
-            new ClickabilityOfElement(element);
+            waitLong().until(new ClickabilityOfElement(element));
         } catch (Exception t) {
             throw new NoSuchFieldException("could not interact with the element " + element);
         }
