@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <documentTitle>Test Framework</documentTitle>
+        <documentTitle>Test report for Selenium Cucumber</documentTitle>
 
         <!-- document encoding -->
         <!-- defaults to UTF-8 -->
@@ -14,7 +14,7 @@
         <protocol>http</protocol>
 
         <!-- title of the document -->
-        <reportName>Test Framework</reportName>
+        <reportName>Test report</reportName>
 
         <!-- report name - displayed at top-nav -->
         <scripts>

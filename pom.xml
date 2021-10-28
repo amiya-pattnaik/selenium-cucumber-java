@@ -110,23 +110,34 @@
             <artifactId>allure-junit4</artifactId>
             <version>2.10.0</version>
         </dependency>
-
-        <!-- These are the Spark Reporting dependencies -->
         <dependency>
-            <artifactId>extentreports-cucumber4-adapter</artifactId>
             <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
             <version>1.2.1</version>
             <exclusions>
-                <exclusion>
-                    <artifactId>cucumber-java</artifactId>
-                    <groupId>io.cucumber</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>cucumber-core</artifactId>
-                    <groupId>io.cucumber</groupId>
-                </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- These are the Spark Reporting dependencies -->
+<!--        <dependency>-->
+<!--            <artifactId>extentreports-cucumber4-adapter</artifactId>-->
+<!--            <groupId>com.aventstack</groupId>-->
+<!--            <version>1.2.1</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>cucumber-java</artifactId>-->
+<!--                    <groupId>io.cucumber</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>cucumber-core</artifactId>-->
+<!--                    <groupId>io.cucumber</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>com.aventstack</groupId>-->
+<!--                    <artifactId>extentreports</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
