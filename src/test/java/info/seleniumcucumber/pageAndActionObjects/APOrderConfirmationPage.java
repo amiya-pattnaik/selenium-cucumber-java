@@ -1,11 +1,11 @@
 package info.seleniumcucumber.pageAndActionObjects;
 
 import info.seleniumcucumber.utils.TestCaseFailed;
-//import org.junit.Assert;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.Assert;
+//import org.testng.Assert;
 
 public class APOrderConfirmationPage extends AbstractPage {
 
@@ -27,6 +27,5 @@ public class APOrderConfirmationPage extends AbstractPage {
 	public void verifyPaymentAmount() throws NoSuchFieldException
 	{
 		Assert.assertEquals(getPaymentAmount(),"$18.51");
-//		Assert.assertEquals(getPaymentAmount(),"$18.51");
 	}
 }

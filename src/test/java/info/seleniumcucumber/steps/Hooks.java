@@ -1,7 +1,8 @@
 package info.seleniumcucumber.steps;
 
 import info.seleniumcucumber.pageAndActionObjects.AbstractPage;
-import io.cucumber.core.api.Scenario;
+//import io.cucumber.core.api.Scenario;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,14 +25,15 @@ public class Hooks extends AbstractPage {
     public void endOfTest(Scenario scenario) throws IOException {
         if (scenario.getStatus() != null && scenario.isFailed()) {
             byte[] screenshotBytes = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshotBytes, "image/png");
+//            scenario.embed(screenshotBytes, "image/png");
+            scenario.attach(screenshotBytes, "image/png", "screenshot.png");
+//            scenario.embed(screenshotBytes, "image/png", "screenshot.png");
         }
-
-        log.info("");
-        log.info("==========================================================================");
-        log.info("================================Test " + scenario.getStatus().toString() + "===============================");
-        log.info("================================Test " + scenario.getName().toString() + "===============================");
-        log.info("==========================================================================");
-        log.info("");
+        String resultLog = "=================Test " + scenario.getName() + ": " + scenario.getStatus().toString() + "=================";
+        String equalCharacters = "====================================================================================================================================================";
+        equalCharacters = equalCharacters.substring(0, resultLog.length());
+        log.info(equalCharacters);
+        log.info(resultLog);
+        log.info(equalCharacters);
     }
 }
