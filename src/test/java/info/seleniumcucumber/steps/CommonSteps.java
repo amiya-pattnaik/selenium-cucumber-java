@@ -16,7 +16,7 @@ import org.openqa.selenium.devtools.NetworkInterceptor;
 import org.openqa.selenium.devtools.v85.network.Network;
 import org.openqa.selenium.devtools.v85.network.model.*;
 
-import org.apache.log4j.LogMF;
+//import org.apache.log4j.LogMF;
 import org.openqa.selenium.remote.http.Contents;
 import org.openqa.selenium.remote.http.HttpRequest;
 import org.openqa.selenium.remote.http.HttpResponse;
@@ -184,25 +184,25 @@ public class CommonSteps extends AbstractPage {
 
     // Dev tool - only for chrome
 
-    @Then("^I get matching request response$")
-    public void getMatchingRequestResponse() throws IOException {
-        DevTools devTools = getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-        devTools.addListener(Network.requestWillBeSent(),
-                entry -> {
-                    System.out.println("Request URL: " + entry.getRequest().getUrl() + "\n"
-                    + " With method: " + entry.getRequest().getMethod() + "\n");
-                    entry.getRequest().getMethod();
-                });
-        devTools.addListener(Network.responseReceived(),
-                entry -> {
-                    System.out.println("Request URL: " + entry.getResponse().getUrl() + "\n"
-                    + " With status: " + entry.getResponse().getStatus() + " " + entry.getResponse().getStatusText() + "\n");
-                });
-        navigationObj.navigateTo("http://www.executeautomation.com");
-        devTools.send(Network.disable());
-    }
+//    @Then("^I get matching request response$")
+//    public void getMatchingRequestResponse() throws IOException {
+//        DevTools devTools = getDevTools();
+//        devTools.createSession();
+//        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+//        devTools.addListener(Network.requestWillBeSent(),
+//                entry -> {
+//                    System.out.println("Request URL: " + entry.getRequest().getUrl() + "\n"
+//                    + " With method: " + entry.getRequest().getMethod() + "\n");
+//                    entry.getRequest().getMethod();
+//                });
+//        devTools.addListener(Network.responseReceived(),
+//                entry -> {
+//                    System.out.println("Request URL: " + entry.getResponse().getUrl() + "\n"
+//                    + " With status: " + entry.getResponse().getStatus() + " " + entry.getResponse().getStatusText() + "\n");
+//                });
+//        navigationObj.navigateTo("http://www.executeautomation.com");
+//        devTools.send(Network.disable());
+//    }
 
     @Given("^I interceptor api$")
     public void interceptorAPIs() throws InterruptedException {

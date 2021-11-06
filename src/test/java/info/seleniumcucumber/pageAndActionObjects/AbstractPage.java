@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractPage implements BaseTest {
 
-    private final DriverManager driverManager = new DriverManager();
+    private DriverManager driverManager = new DriverManager();
     private final DriverWait driverWait = new DriverWait(driverManager);
     private APHomePage homePage;
     private APMyAccountPage myAccountPage;
@@ -24,6 +24,9 @@ public abstract class AbstractPage implements BaseTest {
 
     protected AbstractPage() {
         PageFactory.initElements(driverManager.getDriver(), this);
+    }
+    public void setUp() {
+        driverManager.getDriver();
     }
 
     public WebDriver getDriver() {

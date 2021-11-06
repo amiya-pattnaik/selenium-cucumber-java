@@ -9,7 +9,7 @@ import org.openqa.selenium.support.How;
 
 public class APOrderConfirmationPage extends AbstractPage {
 
-	public String pageTitle = "Order confirmation - My Store 1";
+	public String pageTitle = "Order confirmation - My Store";
 	
 	@FindBy(how = How.XPATH, using = "//strong[contains(text(),'$18.51')]")
 	private WebElement btnPaymentAmount;

@@ -1,5 +1,6 @@
 package info.seleniumcucumber.utils;
 
+import info.seleniumcucumber.constants.EnvironmentType;
 import net.serenitybdd.core.webdriver.RemoteDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,17 +21,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverManager {
-    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-    private static WebDriver driver;
+//    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    protected static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+//    private static WebDriver driver;
     private final ConfigFileReader configFileReader = new ConfigFileReader();
     private DevTools devTools;
 
-    private static final Thread CLOSE_THREAD = new Thread() {
-        @Override
-        public void run() {
-            driver.quit();
-        }
-    };
+//    private static final Thread CLOSE_THREAD = new Thread() {
+//        @Override
+//        public void run() {
+//            driver.quit();
+//        }
+//    };
 
     /**
      * By default to web driver will be firefox
@@ -46,18 +48,22 @@ public class DriverManager {
             case EDGE:
                 System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver");
                 final EdgeOptions edgeOptions = new EdgeOptions();
-//                WebDriver edgeDriver = null;
-//                if (headless) {
-//                    edgeOptions.setCapability("UseChromium", true);
-//                    edgeOptions.setCapability("addArguments","headless");
-//                }
-                try {
-                    driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), edgeOptions);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                if (headless) {
+                    edgeOptions.setCapability("UseChromium", true);
+                    edgeOptions.setCapability("addArguments","headless");
                 }
-//                return new EdgeDriver(edgeOptions);
-                return driver;
+                if (configFileReader.getEnvironment() == EnvironmentType.LOCAL)
+                    return new EdgeDriver(edgeOptions);
+                else {
+                    RemoteWebDriver remoteWebDriver = null;
+                    try {
+                        remoteWebDriver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), edgeOptions);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    return remoteWebDriver;
+                }
+
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver_mac_2");
                 final ChromeOptions chromeOptions = new ChromeOptions();
@@ -76,16 +82,22 @@ public class DriverManager {
                 chromeOptions.addArguments("--disable-gpu");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
                 chromeOptions.addArguments("--no-sandbox");
-
-//                ChromeDriver driver = new ChromeDriver(chromeOptions);
-//                WebDriver chromeDriver = null;
-                try {
-                    driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), chromeOptions);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                if (configFileReader.getEnvironment() == EnvironmentType.LOCAL) {
+                    ChromeDriver chromeDriver = new ChromeDriver(chromeOptions);
+                    devTools = chromeDriver.getDevTools();
+                    return chromeDriver;
                 }
-//                devTools = chromeDriver.getDevTools();
-                return driver;
+
+                else {
+                    RemoteWebDriver remoteWebDriver = null;
+                    try {
+                        remoteWebDriver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), chromeOptions);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    return remoteWebDriver;
+                }
+
             default:
                 System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
@@ -93,16 +105,19 @@ public class DriverManager {
                 if (headless) {
                     ffOptions.setHeadless(true);
                 }
-//                return new FirefoxDriver(ffOptions);
-//                WebDriver firefoxDriver = null;
+        if (configFileReader.getEnvironment() == EnvironmentType.LOCAL)
+          return new FirefoxDriver(ffOptions);
+        else {
+            RemoteWebDriver remoteWebDriver = null;
 
-                try {
-                    driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), ffOptions);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
-                return driver;
+              try {
+                  remoteWebDriver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), ffOptions);
+              } catch (MalformedURLException e) {
+                  e.printStackTrace();
+              }
+              return remoteWebDriver;
         }
+    }
     }
 
     public WebDriver getDriver() {
@@ -110,11 +125,9 @@ public class DriverManager {
             return driverThreadLocal.get();
         } else {
 
-            driver = chooseDriver();
+            driverThreadLocal.set(chooseDriver());
             if(configFileReader.getBrowserWindowSize())
-                driver.manage().window().maximize();
-            driverThreadLocal.set(driver);
-            Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
+                driverThreadLocal.get().manage().window().maximize();
             return getDriver();
         }
     }

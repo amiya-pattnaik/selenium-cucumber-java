@@ -9,16 +9,11 @@ also generate `error shots` for your failed test cases as well.
 
 1. JDK 1.8+ (make sure Java class path is set)
 2. Maven (make sure .m2 class path is set)
-3. Eclipse
-4. Eclipse Plugins for
-    - Maven
-    - Cucumber
-5. Browser driver (make sure you have your desired browser driver and class path is set)
+
 
 ### Framework set up
 
-Fork / Clone repository from [here]( https://github.com/amiya-pattnaik/selenium-cucumber-java) or download zip and set
-it up in your local workspace.
+Fork / Clone repository from https://github.com/minhdaoduy/selenium-cucumber-java
 
 ### Run Some Sample Tests
 
@@ -69,6 +64,7 @@ Feature: Performing a Yahoo Search
 
 
 ### docker setup
+https://github.com/SeleniumHQ/docker-selenium
 $ docker network create grid
 $ docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:4.0.0-20211025
 $ docker run -d -p 7900:7900 --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
@@ -92,3 +88,22 @@ pass: secret
 * http://localhost:7900/ to connect to the Chrome container
 * http://localhost:7901/ to connect to the Edge container
 * http://localhost:7902/ to connect to the Firefox container
+
+### portal report
+https://search.maven.org/artifact/com.epam.reportportal/agent-allure-cucumber6/5.1.0-BETA-1/jar
+https://github.com/reportportal/agent-java-cucumber
+https://reportportal.io/docs/Deploy-with-Docker
+https://github.com/reportportal/agent-java-testNG
+https://github.com/reportportal/examples-java/tree/master/example-testng-log4j/src/main/resources
+### connect DB
+http://localhost:8080/ui/#login
+* Default User: default\1q2w3e
+* Administrator: superadmin\erebus
+* https://www.youtube.com/watch?v=NzEF132ey5s
+  https://www.freesqldatabase.com/account/
+  Your account number is: 558169
+  Your new database is now ready to use.
+  To connect to your database use these details;
+  Host: sql6.freesqldatabase.com Database name: sql6446109 Database user: sql6446109 Database password: zKMTqz5vn8 Port number: 3306
+### add libraries
+In the dialog that opens, specify the artifact of the library version that you want to use in your project, for example: io.cucumber:cucumber-java:jar:6.1.1 or io.cucumber:cucumber-java8:jar:6.1.1 (if you want to use lambda expressions in step definitions).
