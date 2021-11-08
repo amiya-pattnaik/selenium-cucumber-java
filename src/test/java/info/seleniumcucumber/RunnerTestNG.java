@@ -9,9 +9,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     plugin = {
       "pretty"
-//      ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+      ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 //            ,"com.epam.reportportal.cucumber.StepReporter"
-            ,"com.epam.reportportal.cucumber.ScenarioReporter"
+//            ,"com.epam.reportportal.cucumber.ScenarioReporter"
     },
     glue = {"info.seleniumcucumber.steps"},
 //            features = {"classpath:features/"}
