@@ -15,7 +15,6 @@ import info.seleniumcucumber.utils.dataproviders.ConfigFileReader;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import sun.plugin2.util.BrowserType;
 
 import java.net.MalformedURLException;
 import java.net.URL;
