@@ -2,6 +2,8 @@ package info.seleniumcucumber.utils;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -48,8 +50,7 @@ public class DriverManager {
             case "edge":
                 return new EdgeDriver();
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-                final ChromeOptions chromeOptions = new ChromeOptions();
+                final ChromeOptions chromeOptions = new ChromeOptions(); 
 
                 if (headless) {
                     chromeOptions.addArguments("--headless");
@@ -66,7 +67,6 @@ public class DriverManager {
 
                 return new ChromeDriver(chromeOptions);
             default:
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
 
                 if (headless) {
@@ -223,6 +223,7 @@ public class DriverManager {
         if (driverThreadLocal.get() != null) {
             return driverThreadLocal.get();
         }
+        WebDriverManager.chromedriver().setup();
 
         String enviroment = "desktop";
         String platform = "";

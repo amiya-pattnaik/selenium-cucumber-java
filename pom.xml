@@ -28,6 +28,13 @@
 
     <dependencies>
         <!-- These are the Cucumber dependencies -->
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.0.2</version>
+        </dependency>
+
         <dependency>
             <artifactId>cucumber-java</artifactId>
             <groupId>io.cucumber</groupId>
