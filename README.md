@@ -86,9 +86,9 @@ Tests are written in the Cucumber framework using the Gherkin Syntax. More about
 at https://cucumber.io/docs/reference A typical test will look similar to this:
 
 ```
-Feature: Performing a Yahoo Search
+Feature: Performing a Google Search
 
-    As a user on the Yahoo search page
+    As a user on the Google search page
     I want to search for Selenium-Webdriver
     Because I want to learn more about it
 
