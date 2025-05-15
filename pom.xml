@@ -32,7 +32,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.2</version>
+            <version>6.1.0</version>
         </dependency>
 
         <dependency>
